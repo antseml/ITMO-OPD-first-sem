@@ -73,25 +73,24 @@ cd ..
 
 
 ЗАДАНИЕ 2
-chmod 573 aipom5
+chmod 567 aipom5
 chmod 771 aipom5/kadabra
 chmod u=r,go= aipom5/pelipper
-chmod u=rw,o=r aipom5/voltorb
+chmod u=rw,g=r,o= aipom5/voltorb
 chmod 513 aipom5/garchomp
 chmod ug=r,o= aipom5/nidorina
 chmod 400 aipom5/ariados
 chmod 444 blitzle0
 chmod 770 chimchar1
 chmod 771 chimchar1/eelektross
-chmod 377 chimchar1/kabutops
-chmod 046 chimchar1/hydreigon
+chmod 567 chimchar1/kabutops
 chmod 046 chimchar1/hydreigon
 chmod 620 chimchar1/swablu
 chmod 400 darumaka2
-chmod 754 emboar1
-chmod u=r,o=r emboar1/pansear
-chmod 573 emboar1/vigoroth
-chmod 444 emboar1/granbull
+chmod 764 emboar1
+chmod u=r,g=,o=r emboar1/pansear
+chmod 567 emboar1/vigoroth
+chmod u=r,g=r,o=r emboar1/granbull
 chmod 640 kakuna9
 
 
@@ -100,11 +99,24 @@ chmod 640 kakuna9
 ЗАДАНИЕ 3
 пункт 1
 cp -r aipom5 aipom5/kadabra
-find aipom5/kadabra -type f
-aipom5/kadabra/aipom5/ariados
-aipom5/kadabra/aipom5/nidorina
-aipom5/kadabra/aipom5/voltorb
-aipom5/kadabra/aipom5/pelipper
+ls -Rl aipom5/kadabra/
+total 9
+dr-xr--r-x  4 s501219 studs 8 21 нояб. 14:50 aipom5
+
+aipom5/kadabra/aipom5:
+total 3
+-r--------  1 s501219 studs 36 21 нояб. 14:50 ariados
+dr-x--x--x  2 s501219 studs  2 21 нояб. 14:50 garchomp
+drwxr-x--x  2 s501219 studs  2 21 нояб. 14:50 kadabra
+-r--r-----  1 s501219 studs 28 21 нояб. 14:50 nidorina
+-r--------  1 s501219 studs 17 21 нояб. 14:50 pelipper
+-rw-r-----  1 s501219 studs 28 21 нояб. 14:50 voltorb
+
+aipom5/kadabra/aipom5/garchomp:
+total 0
+
+aipom5/kadabra/aipom5/kadabra:
+total 0
 
 пункт 2
 ln kakuna9 chimchar1/hydreigonkakuna
@@ -112,40 +124,36 @@ ls -li kakuna9 chimchar1/hydreigonkakuna
 22310684 -rw-r-----  2 s501219 studs 28 20 нояб. 19:44 chimchar1/hydreigonkakuna
 22310684 -rw-r-----  2 s501219 studs 28 20 нояб. 19:44 kakuna9
 
-пункт 3
-cp -r aipom5 aipom5/kadabra
-find aipom5/kadabra -type f
-aipom5/kadabra/aipom5/ariados
-aipom5/kadabra/aipom5/nidorina
-aipom5/kadabra/aipom5/voltorb
-aipom5/kadabra/aipom5/pelipper
-chmod u=r,go= aipom5/kadabra/aipom5/pelipper
-chmod 400 aipom5/kadabra/aipom5/ariados
-chmod ug=r,o= aipom5/kadabra/aipom5/nidorina
-
-Пункт 4
+Пункт 3
 ln -s aipom5 Copy_66
 ls -la Copy_66
 lrwxr-xr-x  1 s501219 studs 6 20 нояб. 19:57 Copy_66 -> aipom5
 
-Пункт 5
+Пункт 4
 cp kakuna9 aipom5/kadabra
 ls aipom5/kadabra/kakuna9
 aipom5/kadabra/kakuna9
 
-Пункт 6
+Пункт 5
 cat blitzle0 > emboar1/pansearblitzle
 cat emboar1/pansearblitzle
 Развитые способности Sap Sipper
+cat blitzle0
+Развитые способности Sap Sipper
 
-Пункт 7
+Пункт 6
 cat emboar1/granbull emboar1/pansear > blitzle0_99
 cat blitzle0_99
 Развитые
 способности Rattled
 satk=5 sdef=5 spd=6
+cat emboar1/granbull
+Развитые
+способности Rattled
+cat emboar1/pansear
+satk=5 sdef=5 spd=6
 
-Пункт 8
+Пункт 7
 chmod 777 aipom5/
 ln -s ../kakuna9 aipom5/nidorinakakuna
 ls -la aipom5/nidorinakakuna

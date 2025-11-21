@@ -165,7 +165,7 @@ cat ../tmp/result1.txt
        1 ./aipom5/pelipper
 
 Пункт 2
-find . -ls 2>/tmp/errors2.txt | sort -k8,10 | head -4
+find . -ls 2>../tmp/errors2.txt | sort -k8,10 | head -4
 22309927        1 -r--------    1 s501219                          studs                                  17 20 нояб. 19:43 ./aipom5/pelipper
 22310283        1 dr-x--x-wx    2 s501219                          studs                                   2 20 нояб. 19:43 ./aipom5/garchomp
 22310524        1 -rw-r--r--    1 s501219                          studs                                  28 20 нояб. 19:43 ./aipom5/voltorb
@@ -180,8 +180,8 @@ find: ./chimchar1/kabutops: Недостаточно привилегий
      1  weight=73.9 height=43.0 atk=9
 
 Пункт 4
-find . -name "*r" -type f -exec wc -l {} \; 2>/tmp/errors4.txt > /tmp/result4.txt
-cat /tmp/result4.txt
+find . -name "*r" -type f -exec wc -l {} \; 2>../tmp/errors4.txt > ../tmp/result4.txt
+cat ../tmp/result4.txt
        1 ./emboar1/pansear
        1 ./aipom5/kadabra/aipom5/pelipper
        1 ./aipom5/pelipper

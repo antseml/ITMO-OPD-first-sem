@@ -164,59 +164,70 @@ chmod 573 aipom5
 
 
 ЗАДАНИЕ 4
-Пункт 1
-find . -name "p*" -type f -exec wc -l {} \; 2>&1 | grep -v "Недостаточно привилегий" > ../tmp/result1.txt
-cat ../tmp/result1.txt
-       1 ./emboar1/pansearblitzle
-       1 ./emboar1/pansear
-       1 ./aipom5/kadabra/aipom5/pelipper
-       1 ./aipom5/pelipper
+cat */p* */*/*/p* 2>&1 | grep -v "^cat:" | wc -l > ../tmp/res1.txt
+cat ../tmp/res1.txt
+       6
 
 Пункт 2
-find . -ls 2>../tmp/errors2.txt | sort -k8,10 | head -4
-22309927        1 -r--------    1 s501219                          studs                                  17 20 нояб. 19:43 ./aipom5/pelipper
-22310283        1 dr-x--x-wx    2 s501219                          studs                                   2 20 нояб. 19:43 ./aipom5/garchomp
-22310524        1 -rw-r--r--    1 s501219                          studs                                  28 20 нояб. 19:43 ./aipom5/voltorb
-22310784        1 -r--r-----    1 s501219                          studs                                  28 20 нояб. 19:43 ./aipom5/nidorina
+ls -Rltr . 2>../tmp/err2.txt | tail -n +2 | head -4
+-r--r--r--  1 s501219 studs 51 21 нояб. 15:02 blitzle0
+-r--------  1 s501219 studs 50 21 нояб. 15:02 darumaka2
+-rw-r-----  2 s501219 studs 28 21 нояб. 15:02 kakuna9
+drwxrwx---  4 s501219 studs  7 21 нояб. 15:12 chimchar1
 
 Пункт 3
-find . -name "*s" -type f -exec cat -n {} \; 2>&1 | sort -r
-find: ./chimchar1/kabutops: Недостаточно привилегий
+cat -n *s */*s */*/*s */*/*/*s 2>&1 | sort -r
+cat: chimchar1/kabutops: Is a directory
+cat: chimchar1/eelektross: Is a directory
+cat: *s: No such file or directory
+cat: */*/*s: No such file or directory
      2  def=7
      2  def=7
+     2  def=7
+     2  def=7
+     1  weight=73.9 height=43.0 atk=9
+     1  weight=73.9 height=43.0 atk=9
      1  weight=73.9 height=43.0 atk=9
      1  weight=73.9 height=43.0 atk=9
 
 Пункт 4
-find . -name "*r" -type f -exec wc -l {} \; 2>../tmp/errors4.txt > ../tmp/result4.txt
-cat ../tmp/result4.txt
-       1 ./emboar1/pansear
-       1 ./aipom5/kadabra/aipom5/pelipper
-       1 ./aipom5/pelipper
+cat *r */*r */*/*r */*/*/*r 2>../tmp/err4.txt | wc -l > ../tmp/res4.txt
+cat ../tmp/res4.txt
+       5
 
 Пункт 5
-find aipom5 -ls | sort -rn -k2
-22309926       17 dr-xrwx-wx    4 s501219                          studs                                   9 20 нояб. 20:00 aipom5
-22307564       17 dr-xr-x--x    4 s501219                          studs                                   8 20 нояб. 19:47 aipom5/kadabra/aipom5
-22311446        1 lrwxr-xr-x    1 s501219                          studs                                  10 20 нояб. 20:00 aipom5/nidorinakakuna -> ../kakuna9
-22310785        1 -r--------    1 s501219                          studs                                  36 20 нояб. 19:43 aipom5/ariados
-22310784        1 -r--r-----    1 s501219                          studs                                  28 20 нояб. 19:43 aipom5/nidorina
-22310524        1 -rw-r--r--    1 s501219                          studs                                  28 20 нояб. 19:43 aipom5/voltorb
-22310523        1 drwxrwx--x    3 s501219                          studs                                   4 20 нояб. 19:57 aipom5/kadabra
-22310283        1 dr-x--x-wx    2 s501219                          studs                                   2 20 нояб. 19:43 aipom5/garchomp
-22309927        1 -r--------    1 s501219                          studs                                  17 20 нояб. 19:43 aipom5/pelipper
-22307573        1 dr-x--x--x    2 s501219                          studs                                   2 20 нояб. 19:47 aipom5/kadabra/aipom5/garchomp
-22307572        1 -rw-r--r--    1 s501219                          studs                                  28 20 нояб. 19:54 aipom5/kadabra/aipom5/voltorb
-22307571        1 -r--------    1 s501219                          studs                                  17 20 нояб. 19:54 aipom5/kadabra/aipom5/pelipper
-22307570        1 drwxr-x--x    2 s501219                          studs                                   2 20 нояб. 19:47 aipom5/kadabra/aipom5/kadabra
-22307566        1 -r--r-----    1 s501219                          studs                                  28 20 нояб. 19:54 aipom5/kadabra/aipom5/nidorina
-22307565        1 -r--------    1 s501219                          studs                                  36 20 нояб. 19:54 aipom5/kadabra/aipom5/ariados
-22307274        1 -rw-r-----    1 s501219                          studs                                  28 20 нояб. 19:57 aipom5/kadabra/kakuna9
+ls -Rl aipom5 | sort -k2 -rn
+total 9
+total 4
+dr-xr--r-x  4 s501219 studs  8 21 нояб. 15:12 aipom5
+total 3
+drwxrwx--x  3 s501219 studs  4 21 нояб. 15:12 kadabra
+drwxr-x--x  2 s501219 studs  2 21 нояб. 15:12 kadabra
+dr-x--x-wx  2 s501219 studs  2 21 нояб. 15:02 garchomp
+dr-x--x--x  2 s501219 studs  2 21 нояб. 15:12 garchomp
+lrwxr-xr-x  1 s501219 studs 10 21 нояб. 15:12 nidorinakakuna -> ../kakuna9
+-rw-r-----  1 s501219 studs 28 21 нояб. 15:12 voltorb
+-rw-r-----  1 s501219 studs 28 21 нояб. 15:12 kakuna9
+-rw-r-----  1 s501219 studs 28 21 нояб. 15:02 voltorb
+-r--r-----  1 s501219 studs 28 21 нояб. 15:12 nidorina
+-r--r-----  1 s501219 studs 28 21 нояб. 15:02 nidorina
+-r--------  1 s501219 studs 36 21 нояб. 15:12 ariados
+-r--------  1 s501219 studs 36 21 нояб. 15:02 ariados
+-r--------  1 s501219 studs 17 21 нояб. 15:12 pelipper
+-r--------  1 s501219 studs 17 21 нояб. 15:02 pelipper
+total 0
+total 0
+total 0
+aipom5/kadabra/aipom5/kadabra:
+aipom5/kadabra/aipom5/garchomp:
+aipom5/kadabra/aipom5:
+aipom5/kadabra:
+aipom5/garchomp:
 
 Пункт 6
-find . -name "e*" -ls 2>&1 | sort -rk8,10 | tail -2
-22310525        1 drwxrwx--x    2 s501219                          studs                                   2 20 нояб. 19:44 ./chimchar1/eelektross
-find: ./chimchar1/kabutops: Недостаточно привилегий
+ls -Rlt . | grep " e" | tail -2
+drwxrw-r--  3 s501219 studs  6 21 нояб. 15:12 emboar1
+drwxrwx--x  2 s501219 studs  2 21 нояб. 15:02 eelektross
 
 
 

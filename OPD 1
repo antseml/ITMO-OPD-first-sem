@@ -164,16 +164,12 @@ chmod 573 aipom5
 
 
 ЗАДАНИЕ 4
-cat */p* */*/*/p* 2>&1 | grep -v "^cat:" | wc -l > ../tmp/res1.txt
-cat ../tmp/res1.txt
+cat *p */p* */*/*p */*/*/p* 2>&1 | grep -v "^cat:" | wc -l > /tmp/res1.txt
+cat /tmp/res1.txt
        6
 
 Пункт 2
-ls -Rltr . 2>../tmp/err2.txt | tail -n +2 | head -4
--r--r--r--  1 s501219 studs 51 21 нояб. 15:02 blitzle0
--r--------  1 s501219 studs 50 21 нояб. 15:02 darumaka2
--rw-r-----  2 s501219 studs 28 21 нояб. 15:02 kakuna9
-drwxrwx---  4 s501219 studs  7 21 нояб. 15:12 chimchar1
+ls -RlT | grep -v 'total' | grep -v '/' | grep -v '^[[:space:]]*$' | sort -k5,8 #ДОРАБОАТЬ
 
 Пункт 3
 cat -n *s */*s */*/*s */*/*/*s 2>&1 | sort -r
@@ -191,21 +187,17 @@ cat: */*/*s: No such file or directory
      1  weight=73.9 height=43.0 atk=9
 
 Пункт 4
-cat *r */*r */*/*r */*/*/*r 2>../tmp/err4.txt | wc -l > ../tmp/res4.txt
-cat ../tmp/res4.txt
+cat *r */*r */*/*r */*/*/*r 2>/tmp/err4.txt | wc -l > /tmp/res4.txt
+cat /tmp/res4.txt
        5
 
 Пункт 5
-ls -Rl aipom5 | sort -k2 -rn
-total 9
-total 4
+ls -Rl aipom5 | grep -v "total" | grep -v "/" | sort -k2 -rn
 dr-xr--r-x  4 s501219 studs  8 21 нояб. 15:12 aipom5
-total 3
 drwxrwx--x  3 s501219 studs  4 21 нояб. 15:12 kadabra
 drwxr-x--x  2 s501219 studs  2 21 нояб. 15:12 kadabra
 dr-x--x-wx  2 s501219 studs  2 21 нояб. 15:02 garchomp
 dr-x--x--x  2 s501219 studs  2 21 нояб. 15:12 garchomp
-lrwxr-xr-x  1 s501219 studs 10 21 нояб. 15:12 nidorinakakuna -> ../kakuna9
 -rw-r-----  1 s501219 studs 28 21 нояб. 15:12 voltorb
 -rw-r-----  1 s501219 studs 28 21 нояб. 15:12 kakuna9
 -rw-r-----  1 s501219 studs 28 21 нояб. 15:02 voltorb
@@ -215,19 +207,11 @@ lrwxr-xr-x  1 s501219 studs 10 21 нояб. 15:12 nidorinakakuna -> ../kakuna9
 -r--------  1 s501219 studs 36 21 нояб. 15:02 ariados
 -r--------  1 s501219 studs 17 21 нояб. 15:12 pelipper
 -r--------  1 s501219 studs 17 21 нояб. 15:02 pelipper
-total 0
-total 0
-total 0
-aipom5/kadabra/aipom5/kadabra:
-aipom5/kadabra/aipom5/garchomp:
-aipom5/kadabra/aipom5:
-aipom5/kadabra:
-aipom5/garchomp:
 
 Пункт 6
-ls -Rlt . | grep " e" | tail -2
-drwxrw-r--  3 s501219 studs  6 21 нояб. 15:12 emboar1
-drwxrwx--x  2 s501219 studs  2 21 нояб. 15:02 eelektross
+ls -RlT . | grep " e" | sort -k5,7 | tail -2
+drwxrw-r--  3 s501219 studs  6 21 нояб. 15:12:48 2025 emboar1
+-rw-r--r--  1 s501219 studs 0  5 дек.  14:05:27 2025 err2.txt
 
 
 

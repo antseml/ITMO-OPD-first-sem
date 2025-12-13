@@ -169,7 +169,11 @@ cat /tmp/res1.txt
        6
 
 Пункт 2
-ls -RlT | grep -v 'total' | grep -v '/' | grep -v '^[[:space:]]*$' | sort -k5,8 #ДОРАБОАТЬ
+LC_ALL=C ls -lR . 2>/tmp/errors | grep -v '^total' | grep -v '^$' | grep -v ':$' | LC_ALL=C sort -k6,6M -k7,7n -k8,8 | head -4
+----r--rw-  1 s501219 studs 25 Nov 21 15:02 hydreigon
+-r--------  1 s501219 studs 17 Nov 21 15:02 pelipper
+-r--------  1 s501219 studs 36 Nov 21 15:02 ariados
+-r--------  1 s501219 studs 50 Nov 21 15:02 darumaka2
 
 Пункт 3
 cat -n *s */*s */*/*s */*/*/*s 2>&1 | sort -r
@@ -192,26 +196,27 @@ cat /tmp/res4.txt
        5
 
 Пункт 5
-ls -Rl aipom5 | grep -v "total" | grep -v "/" | sort -k2 -rn
+ls -lR aipom5 | grep -v '^total' | grep -v '^$' | grep -v ':$' | sort -k2,2nr
 dr-xr--r-x  4 s501219 studs  8 21 нояб. 15:12 aipom5
 drwxrwx--x  3 s501219 studs  4 21 нояб. 15:12 kadabra
-drwxr-x--x  2 s501219 studs  2 21 нояб. 15:12 kadabra
-dr-x--x-wx  2 s501219 studs  2 21 нояб. 15:02 garchomp
 dr-x--x--x  2 s501219 studs  2 21 нояб. 15:12 garchomp
--rw-r-----  1 s501219 studs 28 21 нояб. 15:12 voltorb
--rw-r-----  1 s501219 studs 28 21 нояб. 15:12 kakuna9
--rw-r-----  1 s501219 studs 28 21 нояб. 15:02 voltorb
--r--r-----  1 s501219 studs 28 21 нояб. 15:12 nidorina
--r--r-----  1 s501219 studs 28 21 нояб. 15:02 nidorina
--r--------  1 s501219 studs 36 21 нояб. 15:12 ariados
--r--------  1 s501219 studs 36 21 нояб. 15:02 ariados
--r--------  1 s501219 studs 17 21 нояб. 15:12 pelipper
+dr-x--x-wx  2 s501219 studs  2 21 нояб. 15:02 garchomp
+drwxr-x--x  2 s501219 studs  2 21 нояб. 15:12 kadabra
 -r--------  1 s501219 studs 17 21 нояб. 15:02 pelipper
+-r--------  1 s501219 studs 17 21 нояб. 15:12 pelipper
+-r--------  1 s501219 studs 36 21 нояб. 15:02 ariados
+-r--------  1 s501219 studs 36 21 нояб. 15:12 ariados
+-r--r-----  1 s501219 studs 28 21 нояб. 15:02 nidorina
+-r--r-----  1 s501219 studs 28 21 нояб. 15:12 nidorina
+-rw-r-----  1 s501219 studs 28 21 нояб. 15:02 voltorb
+-rw-r-----  1 s501219 studs 28 21 нояб. 15:12 kakuna9
+-rw-r-----  1 s501219 studs 28 21 нояб. 15:12 voltorb
+lrwxr-xr-x  1 s501219 studs 10 21 нояб. 15:12 nidorinakakuna -> ../kakuna9
 
 Пункт 6
-ls -RlT . | grep " e" | sort -k5,7 | tail -2
-drwxrw-r--  3 s501219 studs  6 21 нояб. 15:12:48 2025 emboar1
--rw-r--r--  1 s501219 studs 0  5 дек.  14:05:27 2025 err2.txt
+LC_ALL=C ls -lR . 2>&1 | grep -v '^total' | grep -v '^$' | grep -v ':$' | grep '^[^ ]*.*[ ]e[^ ]*$' | LC_ALL=C sort -k6,6Mr -k7,7nr -k8,8r | tail -2
+drwxrw-r--  3 s501219 studs   6 Nov 21 15:12 emboar1
+drwxrwx--x  2 s501219 studs  2 Nov 21 15:02 eelektross
 
 
 

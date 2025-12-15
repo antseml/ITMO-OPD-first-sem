@@ -169,7 +169,7 @@ cat /tmp/res1.txt
        6
 
 Пункт 2
-LC_ALL=C ls -lR . 2>/tmp/errors | grep -v '^total' | grep -v '^$' | grep -v ':$' | LC_ALL=C sort -k6,6M -k7,7n -k8,8 | head -4
+LC_ALL=C ls -lRa . 2>/tmp/errors | grep -v '^total' | grep -v '^$' | grep -v ':$' | LC_ALL=C sort -k6,6M -k7,7n -k8,8 | head -4
 ----r--rw-  1 s501219 studs 25 Nov 21 15:02 hydreigon
 -r--------  1 s501219 studs 17 Nov 21 15:02 pelipper
 -r--------  1 s501219 studs 36 Nov 21 15:02 ariados
@@ -196,7 +196,7 @@ cat /tmp/res4.txt
        5
 
 Пункт 5
-ls -lR aipom5 | grep -v '^total' | grep -v '^$' | grep -v ':$' | sort -k2,2nr
+ls -lRa aipom5 | grep -v '^total' | grep -v '^$' | grep -v ':$' | sort -k2,2nr
 dr-xr--r-x  4 s501219 studs  8 21 нояб. 15:12 aipom5
 drwxrwx--x  3 s501219 studs  4 21 нояб. 15:12 kadabra
 dr-x--x--x  2 s501219 studs  2 21 нояб. 15:12 garchomp
